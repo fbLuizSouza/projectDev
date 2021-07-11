@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 align="center ">Mini Homebroker</h1>
+    <br>
+    <span>
+        <input disabled type="text" id="codAtivo" name="codAtivo" th:value="${listOrdem.get(0).getCodAtivo().toString()}" >
+        <input type="submit" th:value="limpar">
+        <br>
+        <label th:type="text" th:name="lSaldo" >Saldo R$:</label>
+         <input type="hidden" th:value="'0'">
+    </span>
+    <br>
+    <br>
+    <div>
+        <label th:type="text" th:name="lSaldo"   >Operações:</label>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Operação</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="ordem : ${listOrdem}">
+                    <td th:text="${ordem.toString()}">teste</td>
+                    <td th:text="${ordem.getData().toString()}"></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</body>
+</html>

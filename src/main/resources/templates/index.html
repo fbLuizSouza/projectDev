@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div align="center" class="contentContainer">
+
+        <h1>Mini Homebroker</h1>
+        <form method="get" action="#" th:action="@{/ordem}" >
+            <input type="text" id="campoAtivo" name="campoAtivo" >
+            <input type="submit" name="action" value="Comprar" />
+            <input type="submit" name="action" value="Vender" />
+            <input type="submit" name="action" th:formaction="@{/pesquisar}" value="Pesquisar" />
+        </form>
+    </div>
+</body>
+</html>
