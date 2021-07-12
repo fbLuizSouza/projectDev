@@ -40,6 +40,7 @@ public class OrdemController {
         model.addAttribute("ativo", ativoServiceImp.findByCodigo(codigo));
         model.addAttribute("ordem", ordem);
         model.addAttribute("tipo", tipo);
+        model.addAttribute("acao", acao);
         return "ordem";
     }
 

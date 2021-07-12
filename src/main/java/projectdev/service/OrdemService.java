@@ -1,6 +1,7 @@
 package projectdev.service;
 
 import projectdev.dto.OrdemDTO;
+import projectdev.model.Ativo;
 import projectdev.model.Ordem;
 
 import java.util.List;

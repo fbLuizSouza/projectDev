@@ -3,6 +3,7 @@ package projectdev.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import projectdev.dto.OrdemDTO;
+import projectdev.model.Ativo;
 import projectdev.model.Ordem;
 import projectdev.repository.OrdemRepository;
 
@@ -25,7 +26,7 @@ public class OrdemServiceImp implements OrdemService{
 
     @Override
     public List<Ordem> buscarOrdens(String codigo) {
-        return ordemRepository.findAllByCodAtivo(codigo);
+        return ordemRepository.findAllByCodAtivoEquals(codigo);
     }
 
     public void preencheTabelaOrdem(){
