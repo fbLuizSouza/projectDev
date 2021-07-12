@@ -3,6 +3,7 @@ package projectdev.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import projectdev.service.AtivoServiceImp;
 import projectdev.service.OrdemServiceImp;
@@ -26,7 +27,7 @@ public class homeController {
     }
 
     @GetMapping(value = "/pesquisar")
-    public String pesquisar(@RequestParam Map<String,String> requestParams, Model model){
+    public String pesquisar(@RequestParam Map<String,String> requestParams, ModelMap model){
         String codigo = requestParams.get("campoAtivo");
         model.addAttribute("listOrdem", ordemServiceImp.buscarOrdens(codigo));
         return "pesquisar";

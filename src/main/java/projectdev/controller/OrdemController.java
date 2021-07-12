@@ -25,12 +25,21 @@ public class OrdemController {
     @GetMapping(value = "/ordem")
     public String comprarVender(@RequestParam Map<String,String> requestParams, ModelMap model){
         String codigo = requestParams.get("campoAtivo");
-        String acao = requestParams.get("codigoAcao");
+        String acao = requestParams.get("action");
+        int tipo = 2;
+
+        if(acao.equalsIgnoreCase("comprar")){
+            tipo = 1;
+        }
+        else{
+            tipo = 2;
+        }
+
         Ordem ordem = new Ordem();
         Ativo ativo = ativoServiceImp.findByCodigo(codigo);
         model.addAttribute("ativo", ativoServiceImp.findByCodigo(codigo));
         model.addAttribute("ordem", ordem);
-        model.addAttribute("codAcao", acao);
+        model.addAttribute("tipo", tipo);
         return "ordem";
     }
 

@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface OrdemRepository extends JpaRepository<Ordem, Integer> {
 
-    List<Ordem> findOrdemByCodAtivo(String codigo);
+    List<Ordem> findAllByCodAtivo(String codigo);
 }

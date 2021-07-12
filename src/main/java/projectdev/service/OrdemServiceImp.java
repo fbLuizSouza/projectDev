@@ -25,20 +25,20 @@ public class OrdemServiceImp implements OrdemService{
 
     @Override
     public List<Ordem> buscarOrdens(String codigo) {
-        return ordemRepository.findOrdemByCodAtivo(codigo);
+        return ordemRepository.findAllByCodAtivo(codigo);
     }
 
     public void preencheTabelaOrdem(){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        LocalDate s = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate s = LocalDate.parse(formatter.format(LocalDate.now()));
+
         Ordem a = new Ordem("EMB3R", 2, 20, 400.00, s);
         ordemRepository.save(a);
     }
 
     @Override
     public List<OrdemDTO> montaListaOrdemDto(List<Ordem> listaOrdem) {
-
         OrdemDTO ordemDTO = new OrdemDTO();
         return null;
     }
